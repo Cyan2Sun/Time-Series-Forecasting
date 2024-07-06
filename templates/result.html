@@ -1,0 +1,24 @@
+<html>
+    <title>Stock Prediction</title>
+    <body>
+        <h1>Stock Prediction</h1>
+        <img src={{ url_for('static', filename='plot.png') }} alt="Stock Prediction Plot" width="1000" height="500">
+        <h2>Predicted values</h2>
+        <h3>Model: {{ modelmethod }}</h3>
+        <table border="1">
+            <thead>
+                <th>Date</th>
+                <th>Predicted Price</th>
+            </thead>
+            <tbody>
+                {% for d,v in prediction_values %}
+                    <tr>
+                        <td>{{ d }}</td>
+                        <td>{{ v }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
+   
